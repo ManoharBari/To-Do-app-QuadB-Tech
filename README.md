@@ -26,7 +26,7 @@ This project is a Weather-Integrated To-Do Application developed using **ReactJS
   - React Hooks (useState, useEffect)
   - CSS for styling
 - **State Management**:
-  - Redux 
+  - Redux
   - Redux Thunk for asynchronous actions
 - **API Integration**:
   - OpenWeatherMap API for fetching weather data
@@ -50,15 +50,15 @@ Make sure you have the following installed:
    ```bash
    git clone https://github.com/ManoharBari/To-Do-app-QuadB-Tech.git
    ```
-3. Install dependencies:
+2. Install dependencies:
    ```bash
    npm install
    ```
-4. Create a `.env` file in the root directory and add your OpenWeatherMap API key:
+3. Create a `.env` file in the root directory and add your OpenWeatherMap API key:
    ```env
    VITE_REACT_APP_API_KEY=your_api_key
    ```
-5. Start the development server:
+4. Start the development server:
    ```bash
    npm start
    ```
@@ -102,7 +102,11 @@ Make sure you have the following installed:
 
 ## Deployment
 
-1. Deployed on [Vercel](https://vercel.com) 
+1. Deployed on [Vercel](https://vercel.com)
+
+## Live Preview
+
+[To-Do App](https://to-do-app-quad-b-tech.vercel.app)
 
 ## Contributing
 
