@@ -12,7 +12,8 @@ const LoginPage = () => {
     const handleLogin = () => {
         if (username && password) {
             dispatch(login(username));
-            navigate('/todo');
+            localStorage.setItem('username', username);
+            navigate('/');
         }
     };
 

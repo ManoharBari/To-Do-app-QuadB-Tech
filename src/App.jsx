@@ -11,7 +11,7 @@ const App = () => {
       <Router>
         <Routes>
           <Route path="/login" element={<LoginPage />} />
-          <Route path="/todo" element={<ToDoPage />} />
+          <Route path="/" element={<ToDoPage />} />
         </Routes>
       </Router>
     </Provider>
