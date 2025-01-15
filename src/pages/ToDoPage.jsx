@@ -36,7 +36,7 @@ const ToDoPage = () => {
                 },
                 (error) => {
                     console.error("Error fetching location:", error);
-                    dispatch(fetchWeather("New York"));
+                    dispatch(fetchWeather("mumbai"));
                 }
             );
         } else {
