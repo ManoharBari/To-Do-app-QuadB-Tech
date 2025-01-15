@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchWeather } from "../store/actions/weatherActions";
+import { useNavigate } from "react-router-dom";
 
 const ToDoPage = () => {
     const [task, setTask] = useState("");
     const [tasks, setTasks] = useState([]);
+    const navigate = useNavigate();
 
     const dispatch = useDispatch();
     const weather = useSelector((state) => state.weather || { loading: false, error: null, data: null });
@@ -55,39 +57,43 @@ const ToDoPage = () => {
     };
 
     return (
-        <div style={{ padding: "20px", fontFamily: "Arial, sans-serif" }}>
-            <h1>To-Do List</h1>
-            <h3>{weather.data.name}</h3>
-            <p>Temperature: {weather.data.main.temp}°C</p>
-
+        // Weather Section
+        <div className="container" style={{ padding: "50px", fontFamily: "Arial, sans-serif" }}>
+            {weather.data && (
+                <div className="d-flex justify-content-between">
+                    <h4>{weather.data.name}</h4>
+                    <p>Temp: {weather.data.main.temp}°C</p>
+                </div>
+            )}
 
             {/* To-Do Section */}
-            <div style={{ marginBottom: "20px" }}>
+            <div className="input-group input-group-lg">
                 <input
                     type="text"
                     placeholder="Add a task"
                     value={task}
                     onChange={(e) => setTask(e.target.value)}
-                    style={{ padding: "8px", marginRight: "10px", width: "250px" }}
-                />
-                <button onClick={addTask} style={{ padding: "8px 16px" }}>
-                    Add Task
-                </button>
+                    className="form-control" aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-lg" />
+                <button type="button" onClick={addTask} className="btn btn-primary">Add</button>
             </div>
+
             <ul style={{ listStyleType: "none", padding: "0" }}>
                 {tasks.map((task, index) => (
                     <li
                         key={index}
                         style={{
+                            marginTop: "20px",
                             marginBottom: "10px",
                             padding: "10px",
                             border: "1px solid #ddd",
+                            borderRadius: "5px",
                             display: "flex",
                             justifyContent: "space-between",
                         }}
                     >
                         <span>{task.text}</span>
-                        <button onClick={() => deleteTask(index)} style={{ padding: "5px 10px" }}>
+                        <button onClick={() => deleteTask(index)} type="button" className="btn btn-danger">
                             Delete
                         </button>
                     </li>

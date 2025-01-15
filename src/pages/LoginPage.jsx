@@ -18,21 +18,15 @@ const LoginPage = () => {
     };
 
     return (
-        <div>
+        <div className='container mt-5 d-flex flex-column align-items-center'>
             <h2>Login</h2>
-            <input
-                type="text"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-                placeholder="Username"
-            />
-            <input
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                placeholder="Password"
-            />
-            <button onClick={handleLogin}>Login</button>
+            <div class="mb-3 w-50 mt-5">
+                <input type="teaxt" value={username} onChange={(e) => setUsername(e.target.value)} className="form-control" id="user" placeholder="Username" />
+            </div>
+            <div class="mb-3 w-50">
+                <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} className="form-control" id="pass" placeholder="Password" />
+            </div>
+            <button className="btn btn-primary w-50" onClick={handleLogin}>Login</button>
         </div>
     );
 };
